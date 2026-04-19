@@ -1,0 +1,162 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ORBIT RADIUS VARIABLE */
+:root{
+  --orbit-radius: 120px;
+}
+
+/* SMALL MOBILE */
+@media (max-width:640px){
+  :root{
+    --orbit-radius: 90px;
+  }
+}
+
+/* TABLET */
+@media (min-width:641px) and (max-width:1024px){
+  :root{
+    --orbit-radius:110px;
+  }
+}
+
+/* DESKTOP */
+@media (min-width:1025px){
+  :root{
+    --orbit-radius:180px;
+  }
+}
+
+
+/* ORBIT ANIMATIONS */
+
+@keyframes orbit0 {
+  from { transform: rotate(0deg) translateX(var(--orbit-radius)) rotate(0deg); }
+  to { transform: rotate(360deg) translateX(var(--orbit-radius)) rotate(-360deg); }
+}
+
+@keyframes orbit1 {
+  from { transform: rotate(60deg) translateX(var(--orbit-radius)) rotate(-60deg); }
+  to { transform: rotate(420deg) translateX(var(--orbit-radius)) rotate(-420deg); }
+}
+
+@keyframes orbit2 {
+  from { transform: rotate(120deg) translateX(var(--orbit-radius)) rotate(-120deg); }
+  to { transform: rotate(480deg) translateX(var(--orbit-radius)) rotate(-480deg); }
+}
+
+@keyframes orbit3 {
+  from { transform: rotate(180deg) translateX(var(--orbit-radius)) rotate(-180deg); }
+  to { transform: rotate(540deg) translateX(var(--orbit-radius)) rotate(-540deg); }
+}
+
+@keyframes orbit4 {
+  from { transform: rotate(240deg) translateX(var(--orbit-radius)) rotate(-240deg); }
+  to { transform: rotate(600deg) translateX(var(--orbit-radius)) rotate(-600deg); }
+}
+
+@keyframes orbit5 {
+  from { transform: rotate(300deg) translateX(var(--orbit-radius)) rotate(-300deg); }
+  to { transform: rotate(660deg) translateX(var(--orbit-radius)) rotate(-660deg); }
+}
+
+
+/* APPLY ANIMATIONS */
+
+.animate-orbit-0 { animation: orbit0 12s linear infinite; }
+.animate-orbit-1 { animation: orbit1 12s linear infinite; }
+.animate-orbit-2 { animation: orbit2 12s linear infinite; }
+.animate-orbit-3 { animation: orbit3 12s linear infinite; }
+.animate-orbit-4 { animation: orbit4 12s linear infinite; }
+.animate-orbit-5 { animation: orbit5 12s linear infinite; }
+
+.perspective {
+  perspective: 1000px;
+}
+
+.perspective > div {
+  transform-style: preserve-3d;
+}
+
+.perspective:hover > div {
+  transform: rotateX(6deg) rotateY(-6deg);
+}
+@keyframes gradientMove {
+  0% { background-position: 0% }
+  100% { background-position: 200% }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradientMove 4s linear infinite;
+}
+.perspective {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+/* PREMIUM SCROLLBAR */
+.custom-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #22d3ee);
+  border-radius: 10px;
+}
+
+/* FIX TEXT OVERFLOW */
+.custom-scroll {
+  overflow-x: hidden;
+}
+
+.break-words {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+/* 🔥 FIX WHITE EMAIL AUTOFILL */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #020617 inset;
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+html {
+  scroll-behavior: smooth;
+}
